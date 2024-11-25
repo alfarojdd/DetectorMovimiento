@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 
 def send_email(subject, body, to):
     sender_email = "TUCORREO"
-    password = " TUCONTRASEÑA"
+    password = "TUCONTRASEÑA"
 
     try:
         # Configura el mensaje
