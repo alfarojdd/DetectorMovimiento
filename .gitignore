@@ -7,6 +7,8 @@ __pycache__/
 
 .env
 
+motion_video.mp4
+
 # C extensions
 *.so
 

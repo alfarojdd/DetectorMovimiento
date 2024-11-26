@@ -1,8 +1,11 @@
 import cv2
 import numpy as np
 from email_utils import send_email
+from dotenv import load_dotenv
 import time
 import os
+
+load_dotenv()
 
 def detect_motion_with_alerts():
     cap = cv2.VideoCapture(0)
@@ -67,7 +70,7 @@ def detect_motion_with_alerts():
             else:
                 out.release() 
                 cv2.destroyWindow("Recording Video")
-                send_email("Movimiento Detectado", "Se ha detectado movimiento en tu webcam", "TUCORREO", video_path)
+                send_email("Movimiento Detectado", "Se ha detectado movimiento en tu webcam", os.getenv('EMAIL_ADDRESS'), video_path)
                 recording = False
                 print('Fin de la grabación')
                 if os.path.exists(video_path):
